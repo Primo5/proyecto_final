@@ -1,18 +1,20 @@
 import {type, types} from '../types/types'
 
-export const authReducer = (state = null, action)=>{
+export const authReducer = (state = {}, action)=>{
     switch (action.type) {
         case types.authLogin:{
-            const {id, displayName, photo}=action.payload
+            const {id, displayName, photo}=action.payload;
             return{
-                id,
-                displayName,
-                photo
-            }
+                user:{id, displayName, photo},
+            };
         }
         case types.authLogout:{
-            return null;
+            return {};
         }
+        case types.authError:{
+            return { ...state, msnerror:action.payload};
+        }
+
         default:{
             return state;
         }

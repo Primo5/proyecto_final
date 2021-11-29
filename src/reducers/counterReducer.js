@@ -8,7 +8,7 @@ import { types } from "../types/types";
         case types.decrementCounter: {
             return state - action.payload;
         }
-        case types.resetCouter: {
+        case types.resetCounter: {
             return action.payload;
         }
 

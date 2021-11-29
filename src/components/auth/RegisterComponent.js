@@ -1,4 +1,5 @@
 import React from "react";
+import {MdPersonPin, MdVpnKey,MdEmail} from "react-icons/md"
 
 export const RegisterComponent = () => {
     return (
@@ -17,19 +18,20 @@ export const RegisterComponent = () => {
                     <form>
                         <div className="input-group form-group">
                             <div className="input-group-prepend">
-                                <span className="input-group-text"><i className="fas fa-user"></i></span>
+                                <span className="input-group-text"> <MdPersonPin/></span>
+                               
                             </div>
                             <input type="text" className="form-control" placeholder="username"/>
                         </div>
                         <div className="input-group form-group">
                             <div className="input-group-prepend">
-                                <span className="input-group-text"><i className="fas fa-user"></i></span>
+                                <span className="input-group-text"><MdEmail/></span>
                             </div>
                             <input type="text" className="form-control" placeholder="email"/>
                         </div>
                         <div className="input-group form-group">
                             <div className="input-group-prepend">
-                                <span className="input-group-text"><i className="fas fa-key"></i></span>
+                                <span className="input-group-text"><MdVpnKey/></span>
                             </div>
                             <input type="password" className="form-control" placeholder="password"/>
                         </div>
