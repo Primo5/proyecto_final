@@ -1,14 +1,19 @@
 import React from "react"
 import {MdCancel} from "react-icons/md"
-import { useSelector } from "react-redux"
-
+import { useSelector, useDispatch } from "react-redux"
 import {Route,Switch, Redirect} from "react-router-dom"
+import { authLogoutAsync } from "../../actions/auth"
 import {MainDashBoard} from "./MainDashBoard"
 import "./styles.css"
 
 export const DashboardComponent = ({children, ...rest}) => {
    const {auth}= useSelector(state => state);
    const {user}=auth;
+   const dispatch= useDispatch();
+    const handlerLogOut=()=>{
+        dispatch(authLogoutAsync());
+    };
+
     return user == null?(<Redirect to="/login"/>):(<>
             <input type="checkbox" id="check"/>
             <label for="check">
@@ -25,7 +30,7 @@ export const DashboardComponent = ({children, ...rest}) => {
                 <li><a href="#"><i className="fas fa-calendar-week"></i>Events</a></li>
                 <li><a href="#"><i className="fas fa-question-circle"></i>About</a></li>
                 <li><a href="#"><i className="fas fa-sliders-h"></i>Services</a></li>
-                <li><a href="#"><i className="fas fa-envelope"></i>Contact</a></li>
+                <li><a href="#" onClick={handlerLogOut}><i className="fas fa-envelope"></i>LogOut</a></li>
                 </ul>
             </div>
             <section></section>

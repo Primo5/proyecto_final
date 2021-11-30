@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Link, Redirect} from "react-router-dom"
 import {MdPersonPin, MdVpnKey} from "react-icons/md"
 import {useForm} from "../../hooks/useForm";
 import { useDispatch } from "react-redux";
-import { authAsync } from "../../actions/auth";
+import { authAsync, auth } from "../../actions/auth";
 import {useSelector} from "react-redux";
 export const LoginComponent = () => {
+
+    
 const dispatch = useDispatch();
-const {auth}= useSelector((state) => state);
-const {user, msnerror}=auth;
+useEffect(()=>{
+    const userData= localStorage.getItem("user");
+    if(userData!=null){
+        dispatch(auth(JSON.parse(userData)));
+    }
+},[]);
+
+const {auth: authRename}= useSelector((state) => state);
+const {user, msnerror}=authRename;
 const [form, handlerChangeForm, handlerResetForm]= useForm({
     username: "",
     password: "",

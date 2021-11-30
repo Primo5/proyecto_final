@@ -8,16 +8,31 @@ export const authAsync = (username, password) => {
         setTimeout(()=>{
             if(username === "primo" && password === "1234")
             {
-                dispatch(
-                    auth({id: new Date().getTime(), displayName: username, photo: ""})
-                    );
+                const userdata={
+                    id: new Date().getTime(), displayName: username, photo: "",
+                }
+                localStorage.setItem("user",JSON.stringify(userdata));
+                dispatch(auth(userdata));
             }else{
                 dispatch(error("Credenciales incorrectas"));
             }
         },100);
     };
 };
-
+export const authLogoutAsync = () => {
+    return(dispatch) => {
+       setTimeout(()=>{
+           localStorage.removeItem("user");
+           dispatch(logout());
+        },100);
+    };
+};
+export const logout = (user) => {
+    return{
+        type: types.authLogout,
+        payload: null,
+    };
+};
 export const auth = (user) => {
     return{
         type: types.authLogin,
