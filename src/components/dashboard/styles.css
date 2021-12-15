@@ -85,6 +85,12 @@ section{
   height: 100vh;
   transition: all .5s;
 }
-
-
-
+.icon{
+  font-size: 40px;
+  padding-left: 10px;
+}
+.admin-titulo{
+  float:right;
+  color: white;
+  transform: translate(-30%,25%);
+}

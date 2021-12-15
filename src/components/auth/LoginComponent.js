@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {Link, Redirect} from "react-router-dom"
 import {MdPersonPin, MdVpnKey} from "react-icons/md"
+
 import {useForm} from "../../hooks/useForm";
 import { useDispatch } from "react-redux";
 import { authAsync, auth } from "../../actions/auth";
@@ -65,10 +66,7 @@ const handlerSubmit =(e)=>{
                             onChange={handlerChangeForm}
                             placeholder="password"/>
                         </div>
-                        <div className="row align-items-center remember">
-                            <input type="checkbox"/>Renember Me     
-                        </div>
-                        {msnerror && <div>{msnerror}</div>}
+                        
                         <div className="form-group">
                             <input type="submit" value="Login" className="btn float-right login_btn"/>
                         </div>
@@ -82,7 +80,7 @@ const handlerSubmit =(e)=>{
                 </div>
             </div>
         </div>
-        </div>):(<Redirect to="/"/>)}
+        </div>):(<Redirect to="/admin"/>)}
      </>
     );
 }; /**/

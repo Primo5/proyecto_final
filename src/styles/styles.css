@@ -6,7 +6,8 @@
 html,body{
 /* background-image: url("https://getwallpapers.com/wallpaper/download/344517"); */
     /* background-image: url("https://getwallpapers.com/wallpaper/download/7676"); */
-background-image: url("https://image.shutterstock.com/z/stock-photo-close-up-of-a-businesswoman-making-agenda-on-personal-organizer-at-workplace-625950947.jpg");
+background-image: linear-gradient(to right, rgba(0,0,0,0.61), rgba(200,300,195,0.32)),
+url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 /* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */
 
 background-size: cover;

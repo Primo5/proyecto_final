@@ -1,5 +1,6 @@
 import React from "react";
 import {MdPersonPin, MdVpnKey,MdEmail} from "react-icons/md"
+import {Link} from "react-router-dom"
 
 export const RegisterComponent = () => {
     return (
@@ -39,8 +40,15 @@ export const RegisterComponent = () => {
                         <div className="form-group">
                             <input type="submit" value="Login" className="btn float-right login_btn"/>
                         </div>
+                       
                     </form>
                 </div>
+                <div className="card-footer">
+                            <div className="d-flex justify-content-center links">
+                            Go back to login?
+                            <Link to="/login">Sign In</Link>
+                            </div>
+                        </div>
             </div>
         </div>
         </div>
